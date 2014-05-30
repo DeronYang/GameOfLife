@@ -49,4 +49,20 @@ public class LifeGame{
 		}
 		
 	}
+	public int getNodeNextState(int row,int col){
+		int aliveNeighborNum=getAliveNeighborNum(row, col);
+		if(map[row][col].getCurState()==1&&aliveNeighborNum<2){
+			return 0;
+		}
+		if(map[row][col].getCurState()==1&&aliveNeighborNum>3){
+			return 0;
+		}
+		if(map[row][col].getCurState()==1&&(aliveNeighborNum==3||aliveNeighborNum==2)){
+			return 1;
+		}
+		if(map[row][col].getCurState()==0&&aliveNeighborNum==3){
+			return 1;
+		}
+		return 0;
+	}
 }

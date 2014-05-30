@@ -1,6 +1,11 @@
 package lifegame;
 
 public class Node {
+	/**
+	 * 1-->alive
+	 * 0-->die
+	 * -1-->undefined
+	 */
 	private int curState;
 	private int nxtState;
 	public Node(int curState, int nxtState) {

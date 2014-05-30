@@ -41,4 +41,8 @@ public class TestNodeNextState {
 	public void testNodeShouldDieOfLonely() {
 		org.junit.Assert.assertEquals(0,lg.getNodeNextState(1,3));
 	}
+	@Test
+	public void testNodeShouldDieOfcrowd() {
+		org.junit.Assert.assertEquals(0,lg.getNodeNextState(3,1));
+	}
 }
