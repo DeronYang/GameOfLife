@@ -65,4 +65,30 @@ public class LifeGame{
 		}
 		return 0;
 	}
+	/**
+	 * 
+	 * @param times the number of generation will be calculated
+	 */
+	public void startGame(int times){
+		for(int n=0;n<=times;n++){
+			System.out.println("generation "+n+":");
+			for(int i=0;i<=maxR;i++){
+				for(int j=0;j<=maxC;j++){
+					System.out.print(map[i][j].getCurState()+" ");
+					map[i][j].setNxtState(getNodeNextState(i,j));
+				}
+				System.out.println();
+			}
+			for(int i=0;i<=maxR;i++){
+				for(int j=0;j<=maxC;j++){
+					map[i][j].setCurState(map[i][j].getNxtState());
+					map[i][j].setNxtState(-1);
+				}
+			}
+		}
+	}
+	public static void main(String[] args) {
+		LifeGame lg=new LifeGame();
+		lg.startGame(3);
+	}
 }

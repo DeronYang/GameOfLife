@@ -50,4 +50,9 @@ public class TestNodeNextState {
 		org.junit.Assert.assertEquals(1,lg.getNodeNextState(2,0));
 		org.junit.Assert.assertEquals(1,lg.getNodeNextState(3,2));
 	}
+	@Test
+	public void testNodeShouldRevive() {
+		org.junit.Assert.assertEquals(1,lg.getNodeNextState(1,1));
+		org.junit.Assert.assertEquals(1,lg.getNodeNextState(3,0));
+	}
 }
