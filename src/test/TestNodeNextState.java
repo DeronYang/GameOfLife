@@ -45,4 +45,9 @@ public class TestNodeNextState {
 	public void testNodeShouldDieOfcrowd() {
 		org.junit.Assert.assertEquals(0,lg.getNodeNextState(3,1));
 	}
+	@Test
+	public void testNodeShouldKeepAlive() {
+		org.junit.Assert.assertEquals(1,lg.getNodeNextState(2,0));
+		org.junit.Assert.assertEquals(1,lg.getNodeNextState(3,2));
+	}
 }
